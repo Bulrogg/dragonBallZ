@@ -20,49 +20,50 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-      <!-- Add your site or application content here -->
+      
       <div class="container">
+
         <div class="header">
-          <!--<ul class="nav nav-pills pull-right">
-            <li class="active"><a ng-href="#">Home</a></li>
-            <li><a ng-href="#">About</a></li>
-            <li><a ng-href="#">Contact</a></li>
-          </ul>-->
           <h3 class="text-muted">Dragon Ball Z - VOSTFR</h3>
         </div>
 
-        <div class="jumbotron">
-          <h1>'Allo, 'Allo!</h1>
-          <p class="lead">
-            <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-            Always a pleasure scaffolding your apps.
-          </p>
-          <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-        </div>
+        <div ng-controller="episodeController">
 
-        <div class="row marketing">
-          <h4>HTML5 Boilerplate</h4>
-          <p>
-            HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-          </p>
+          <div>
+            <select ng-model="episodeCourant" data-ng-options="ep as ep.id + ' - ' + ep.titre group by ep.saison for ep in episodes">
+            </select>
+          </div>
 
-          <h4>Angular</h4>
-          <p>
-            AngularJS is a toolset for building the framework most suited to your application development.
-          </p>
+          <div>
+            <h2>{{episodeCourant.id}} - {{episodeCourant.titre}}</h2>
+          </div>
 
-          <h4>Karma</h4>
-          <p>Spectacular Test Runner for JavaScript.</p>
-
-<EMBED src="http://video.rutube.ru/14858d8d743a70df53372db6cc1d6f91" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowFullScreen="true" ></EMBED>
-          
         </div>
 
 
-        <div class="footer">
-          <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-        </div>
+
+  
+  <div ng-show="false">
+   045 <br>
+  <embed src="http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
+  046 <br>
+  <embed src="http://video.rutube.ru/14858d8d743a70df53372db6cc1d6f91" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
+  047 <br>
+  <embed src="http://video.rutube.ru/d4e407b91176b9158d0ed60ed84dca2b" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
+  048 <br>
+  <embed src="http://video.rutube.ru/cc4257ed36689bf6b55e7a9f75f93499" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
+  049 <br>
+  <embed src="http://video.rutube.ru/95bb1d8c14966f3fc16dfd0079c594b6" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
+  050 <br>
+  <embed src="http://video.rutube.ru/39ae89a9953e69fbabf2d1929d1538f1" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
+</div>
+
+
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-heart"></span> from Bulrogg</p>
       </div>
+
+    </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -80,7 +81,7 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/episode.js"></script>
     <!-- endbuild -->
   </body>
-</html>
+  </html>
