@@ -5,10 +5,10 @@ angular.module('episodes.service', []);
 angular.module('episodes.service').factory('episodesService', function() {
 	return {
 		'listeDesEpisodes' : [
-		{ 'id':'001', 'urlRutube':'http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'un mysterieux guerrier' },
-		{ 'id':'002', 'urlRutube':'http://video.rutube.ru/14858d8d743a70df53372db6cc1d6f91', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Le passe de sangoku' },
-		{ 'id':'003', 'urlRutube':'http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Un equipe de choc' },
-		{ 'id':'004', 'urlRutube':'http://video.rutube.ru/14858d8d743a70df53372db6cc1d6f91', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Quand les ennemis s\'allient' },
+		{ 'id':'001', 'urlRutube':'', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'un mysterieux guerrier' },
+		{ 'id':'002', 'urlRutube':'', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Le passe de sangoku' },
+		{ 'id':'003', 'urlRutube':'', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Un equipe de choc' },
+		{ 'id':'004', 'urlRutube':'', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Quand les ennemis s\'allient' },
 		{ 'id':'005', 'urlRutube':'', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Sangoku sacrifie sa vie' },
 		{ 'id':'006', 'urlRutube':'', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'Pour une victoire definitive' },
 		{ 'id':'007', 'urlRutube':'', 'saison':'Saison 1: l\'arrivée des sayens', 'titre':'L\'entrainement de sangohan' },
@@ -297,6 +297,9 @@ angular.module('episodes.service').factory('episodesService', function() {
 		{ 'id':'290', 'urlRutube':'', 'saison':'Saison 7: Boubou !', 'titre':'Une vieille connaissance' },
 		{ 'id':'291', 'urlRutube':'', 'saison':'Saison 7: Boubou !', 'titre':'Sangoku commence une nouvelle vie' },
 		{ 'id':'292', 'urlRutube':'', 'saison':'Saison 7: Boubou !', 'titre':'Merci'}
-		]
+		],
+		mergerUrlRutube = function(liste) {
+			
+		}
 	};
 });
