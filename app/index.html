@@ -5,77 +5,59 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(.) styles/vendor.css -->
-  <!-- bower:css -->
+  
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
 </head>
-<body ng-app="dragonBallApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
+<body ng-app="dragonBallApp">    
+  <div class="container" ng-controller="episodesController">
 
-      
-      <div class="container">
-
-        <div class="header">
-          <h3 class="text-muted">Dragon Ball Z - VOSTFR</h3>
-        </div>
-
-        <div ng-controller="episodesController">
-
-          <div>
-            <select ng-model="episodeCourant" data-ng-options="ep as ep.id + ' - ' + ep.titre group by ep.saison for ep in episodes">
-            </select>
-          </div>
-
-          <div>
-            <h2>{{episodeCourant.id}} - {{episodeCourant.titre}}</h2>
-          </div>
-
-        </div>
-
-<!--
-        <lj-embed> 
-        <OBJECT width="470" height="353">
-          <PARAM name="movie" value="http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82"></PARAM>
-          <PARAM name="wmode" value="window"></PARAM>
-          <PARAM name="allowFullScreen" value="true"></PARAM>
-          <EMBED src="http://video.rutube.ru/
-          " type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowFullScreen="true" ></EMBED>
-        </OBJECT>
-      </lj-embed>
--->
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from Bulrogg</p>
-      </div>
-
+    <div class="header">
+      <h3 class="text-muted">Dragon Ball Z - VOSTFR</h3>
     </div>
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+    <div class="panel panel-default">
+      <div class="panel-heading">Choix de l'episode</div>
+      <div class="panel-body">
+        <form class="form-inline" role="form">
+          <button type="button" class="btn btn-default" ng-click="episodePrecedent()" ng-disabled="estLePremierEpisode()">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </button>
+          <select class="form-control" ng-model="episodeCourant" data-ng-options="ep as ep.id + ' - ' + ep.titre group by ep.saison for ep in episodes"></select>
+          <button type="button" class="btn btn-default" ng-click="episodeSuivant()" ng-disabled="estLeDernierEpisode()">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </form>
+      </div>
+    </div>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+    <div class="panel panel-default">
+      <div class="panel-heading">{{episodeCourant.id}} - {{episodeCourant.titre}}</div>
+      <div class="panel-body">
+        <lj-embed> 
+          <OBJECT width="470" height="353">
+            <PARAM name="movie" value="http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82"></PARAM>
+            <PARAM name="wmode" value="window"></PARAM>
+            <PARAM name="allowFullScreen" value="true"></PARAM>
+            <EMBED src="http://video.rutube.ru/" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowFullScreen="true" ></EMBED>
+          </OBJECT>
+        </lj-embed>
+      </div>
+    </div>
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/services/episodesService.js"></script>
-    <script src="scripts/controllers/episodesController.js"></script>
-    <!-- endbuild -->
-  </body>
-  </html>
+    <div class="footer">
+      <p><span class="glyphicon glyphicon-heart"></span> from Bulrogg</p>
+    </div>
+
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/json3/lib/json3.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/services/episodesService.js"></script>
+  <script src="scripts/controllers/episodesController.js"></script>
+</body>
+</html>
