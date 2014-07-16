@@ -1,1 +1,3 @@
-angular.module('dragonBallApp', []);
+'use strict';
+
+angular.module('dragonBallApp', ['episodes.service']);

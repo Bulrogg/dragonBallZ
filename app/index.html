@@ -27,7 +27,7 @@
           <h3 class="text-muted">Dragon Ball Z - VOSTFR</h3>
         </div>
 
-        <div ng-controller="episodeController">
+        <div ng-controller="episodesController">
 
           <div>
             <select ng-model="episodeCourant" data-ng-options="ep as ep.id + ' - ' + ep.titre group by ep.saison for ep in episodes">
@@ -40,24 +40,17 @@
 
         </div>
 
-
-
-  
-  <div ng-show="false">
-   045 <br>
-  <embed src="http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
-  046 <br>
-  <embed src="http://video.rutube.ru/14858d8d743a70df53372db6cc1d6f91" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
-  047 <br>
-  <embed src="http://video.rutube.ru/d4e407b91176b9158d0ed60ed84dca2b" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
-  048 <br>
-  <embed src="http://video.rutube.ru/cc4257ed36689bf6b55e7a9f75f93499" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
-  049 <br>
-  <embed src="http://video.rutube.ru/95bb1d8c14966f3fc16dfd0079c594b6" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
-  050 <br>
-  <embed src="http://video.rutube.ru/39ae89a9953e69fbabf2d1929d1538f1" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowfullscreen="true"></embed><br/>
-</div>
-
+<!--
+        <lj-embed> 
+        <OBJECT width="470" height="353">
+          <PARAM name="movie" value="http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82"></PARAM>
+          <PARAM name="wmode" value="window"></PARAM>
+          <PARAM name="allowFullScreen" value="true"></PARAM>
+          <EMBED src="http://video.rutube.ru/
+          " type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowFullScreen="true" ></EMBED>
+        </OBJECT>
+      </lj-embed>
+-->
 
       <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> from Bulrogg</p>
@@ -81,7 +74,8 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/episode.js"></script>
+    <script src="scripts/services/episodesService.js"></script>
+    <script src="scripts/controllers/episodesController.js"></script>
     <!-- endbuild -->
   </body>
   </html>
