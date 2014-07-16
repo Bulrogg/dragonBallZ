@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('dragonBallApp', ['episodes.service']);
+angular.module('dragonBallApp', ['episodes.service', 'episodes.controller', 'episodes.directive']);

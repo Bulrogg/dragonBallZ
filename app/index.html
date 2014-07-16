@@ -34,14 +34,9 @@
     <div class="panel panel-default">
       <div class="panel-heading">{{episodeCourant.id}} - {{episodeCourant.titre}}</div>
       <div class="panel-body">
-        <lj-embed> 
-          <OBJECT width="470" height="353">
-            <PARAM name="movie" value="http://video.rutube.ru/d1f2975991ddf484881916cdcc9bba82"></PARAM>
-            <PARAM name="wmode" value="window"></PARAM>
-            <PARAM name="allowFullScreen" value="true"></PARAM>
-            <EMBED src="http://video.rutube.ru/" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowFullScreen="true" ></EMBED>
-          </OBJECT>
-        </lj-embed>
+        <div ng-repeat="ep in [episodeCourant]">                  
+          <embed embed-src="{{ep.urlRutube}}" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowFullScreen="true" ></embed>
+        </div>
       </div>
     </div>
 
@@ -57,6 +52,7 @@
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
   <script src="scripts/app.js"></script>
+  <script src="scripts/directives/episodesDirective.js"></script>
   <script src="scripts/services/episodesService.js"></script>
   <script src="scripts/controllers/episodesController.js"></script>
 </body>
