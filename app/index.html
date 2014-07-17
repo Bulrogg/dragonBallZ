@@ -27,7 +27,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Choix de l'episode</div>
       <div class="panel-body">
-        <form class="form-inline" role="form">
+        <form class="form-inline text-center" role="form">
           <button type="button" class="btn btn-default" ng-click="episodePrecedent()" ng-disabled="estLePremierEpisode()">
             <span class="glyphicon glyphicon-chevron-left"></span>
           </button>
@@ -42,34 +42,40 @@
     <div class="panel panel-default">
       <div class="panel-heading">{{episodeCourant.id}} - {{episodeCourant.titre}}</div>
       <div class="panel-body">
-        <div ng-repeat="ep in [episodeCourant]">                  
-          <embed embed-src="{{ep.urlRutube}}" type="application/x-shockwave-flash" wmode="window" width="470" height="353" allowFullScreen="true" ></embed>
-        </div>
+        <div ng-repeat="ep in [episodeCourant]">      
+          <lj-embed> 
+          <object width="100%" height="100%">
+            <param name="wmode" value="window"></param>
+            <param name="allowFullScreen" value="true"></param>
+            <embed embed-src="{{ep.urlRutube}}" type="application/x-shockwave-flash" wmode="window" width="100%" height="100%" allowFullScreen="true" ></embed>
+          </object>
+        </lj-embed>
       </div>
     </div>
-
-    <div class="footer">
-      <p><span class="glyphicon glyphicon-heart"></span> from Bulrogg</p>
-    </div>
-
   </div>
 
-  <!-- build:js(.) scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/es5-shim/es5-shim.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/json3/lib/json3.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-  
-  <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/directives/episodesDirective.js"></script>
-  <script src="scripts/services/episodesService.js"></script>
-  <script src="scripts/controllers/episodesController.js"></script>
-  <!-- endbuild -->
+  <div class="footer">
+    <p><span class="glyphicon glyphicon-heart"></span> from Bulrogg</p>
+  </div>
+
+</div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/directives/episodesDirective.js"></script>
+<script src="scripts/services/episodesService.js"></script>
+<script src="scripts/controllers/episodesController.js"></script>
+<!-- endbuild -->
 
 </body>
 </html>
