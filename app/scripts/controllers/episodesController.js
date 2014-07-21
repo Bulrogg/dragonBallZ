@@ -6,15 +6,21 @@ angular.module('episodes.controller').controller('episodesController', ['$scope'
 
 	$scope.episodes = episodesService.listeDesEpisodes;
 
-	$scope.episodeCourant = $scope.episodes[0];
+	$scope.episodeCourant = localStorage.idEpisodeCourant ? _.find($scope.episodes, function(o){return o.id===localStorage.idEpisodeCourant; }) : $scope.episodes[0];
+
+	$scope.storeEpisodeCourant = function(ep) {
+		localStorage.setItem('idEpisodeCourant', ep.id);
+	};
 
 	$scope.episodeSuivant = function() {
 		$scope.episodeCourant = $scope.episodes[$scope.episodes.indexOf($scope.episodeCourant) + 1];
+		$scope.storeEpisodeCourant($scope.episodeCourant);
 		return false;
 	};
 
 	$scope.episodePrecedent = function() {
 		$scope.episodeCourant = $scope.episodes[$scope.episodes.indexOf($scope.episodeCourant) - 1];
+		$scope.storeEpisodeCourant($scope.episodeCourant);
 		return false;
 	};
 

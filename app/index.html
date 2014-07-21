@@ -31,7 +31,7 @@
           <button type="button" class="btn btn-default" ng-click="episodePrecedent()" ng-disabled="estLePremierEpisode()">
             <span class="glyphicon glyphicon-chevron-left"></span>
           </button>
-          <select class="form-control" ng-model="episodeCourant" data-ng-options="ep as ep.id + ' - ' + ep.titre group by ep.saison for ep in episodes"></select>
+          <select class="form-control" ng-model="episodeCourant" data-ng-options="ep as ep.id + ' - ' + ep.titre group by ep.saison for ep in episodes" ng-change="storeEpisodeCourant(this.episodeCourant)"></select>
           <button type="button" class="btn btn-default" ng-click="episodeSuivant()" ng-disabled="estLeDernierEpisode()">
             <span class="glyphicon glyphicon-chevron-right"></span>
           </button>
@@ -66,6 +66,7 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/json3/lib/json3.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
